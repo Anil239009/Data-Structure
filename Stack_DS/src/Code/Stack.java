@@ -4,6 +4,7 @@ public class Stack<T> {
 	private T []arr;
 	private int size;
 	private int top;
+	@SuppressWarnings("unchecked")
 	public Stack(int size) {
 		super();
 		this.size = size;
