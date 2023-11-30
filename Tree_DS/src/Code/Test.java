@@ -22,6 +22,11 @@ public class Test {
 		System.out.println();
 		System.out.print("PostOrder : ");
 		bts.postOrder(bts.root);
+		System.out.println();
+		
+		int count=bts.getcount(bts.root);
+		System.out.println("Count of element is : "+count);
+		
 		
 	}
 

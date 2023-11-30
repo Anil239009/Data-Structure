@@ -85,4 +85,97 @@ public class BTS {
 
 	}
 
+	// get count of element
+	public int getcount(Node root) {
+		if (root == null) {
+			return 0;
+		}
+		return 1 + getcount(root.getLeft()) + getcount(root.getRight());
+	}
+	// deleting element of tree
+
+	public boolean find(Node root, int data) {
+		if (root == null) {
+			return false;
+		}
+		if (root.getData() == data) {
+			return true;
+		}
+		if (data < root.getData()) {
+			return find(root.getLeft(), data);
+		}
+
+		return find(root.getRight(), data);
+	}
+
+	public boolean delete(int data) {
+		if (root == null) {
+			return false;
+		}
+		//1. locate del and parent
+		Node parent = root, del = root;
+		while (del.getData() != data) {
+			if (data < del.getData()) {
+				parent = del;
+				del = del.getLeft();
+			} else {
+				parent = del;
+				del = del.getRight();
+			}
+			//if data is not existing
+			if(del==null) {
+				return false;
+			}
+		}
+		while(true) {
+			//check if node is terminal
+			if(del.getLeft()==null && del.getRight()==null) {
+				if(del==root) {
+					root=null;
+					return true;
+				}
+				if(parent.getLeft()==del) {
+					parent.setLeft(null);
+				}else {
+					parent.setRight(null);
+				}
+				return true;
+			}
+			else {
+				//shift del down the tree
+				if(del.getLeft()!=null) {
+					//find max from left
+					parent=del;
+					Node max=del.getLeft();
+					
+				while(max.getRight()!= null) {
+						parent=max;
+						max=max.getRight();
+					}
+				int temp=max.getData();
+				max.setData(del.getData());
+				del.setData(temp);
+				
+				del=max;
+				}
+				else {
+					//min from right
+					parent=del;
+					Node min=del.getRight();
+					while(min.getLeft()!=null) {
+						int temp=min.getData();
+						min.setData(del.getData());
+						del.setData(temp);
+						
+						del=min;
+						
+					}
+				}
+				
+			}
+		}
+		
+		
+	}
+
 }
