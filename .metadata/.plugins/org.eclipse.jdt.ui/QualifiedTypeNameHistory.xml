@@ -3,4 +3,8 @@
     <fullyQualifiedTypeName name="Code.BTS"/>
     <fullyQualifiedTypeName name="java.util.Stack"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.POP"/>
+    <fullyQualifiedTypeName name="Code.Node"/>
+    <fullyQualifiedTypeName name="ThreadedBinary"/>
+    <fullyQualifiedTypeName name="org.graalvm.compiler.nodes.NodeView.Default"/>
+    <fullyQualifiedTypeName name="Code.ThreadedBinary"/>
 </qualifiedTypeNameHistroy>

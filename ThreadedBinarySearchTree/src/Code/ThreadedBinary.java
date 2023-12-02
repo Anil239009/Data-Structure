@@ -78,5 +78,42 @@ public class ThreadedBinary {
 		}
 		System.out.println();
 	}
+	
+	public void postOrder(Node node) {
+		Node temp=root;
+		char flag='L';
+		while(temp!=null) {
+			while(temp.getlFlag()=='L'&&flag=='L') {
+				temp=temp.getLeft();
+			}
+			flag=temp.getrFlag();
+			if(flag=='L') {
+				temp=temp.getRight();
+			}
+			else {
+				while(true) {
+					System.out.print(temp.getData()+ " ");
+					if(isRightChild(temp)) {
+						while(temp.getlFlag()=='L'&&flag=='L') {
+							temp=temp.getLeft();
+						}
+						}
+					else {
+						while(temp.getrFlag()=='L') {
+							temp=temp.getRight();
+						}
+						temp=temp.getRight();
+					}
+				}
+			}
+		}
+		System.out.println();
+	}
+	
+	public boolean isRightChild(Node node) {
+		
+		
+		return true;
+	}
 
 }
