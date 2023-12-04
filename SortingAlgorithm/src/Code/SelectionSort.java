@@ -19,12 +19,19 @@ public class SelectionSort {
 	}
 	public static void main(String[] args) {
 		int [] arr= {20,58,48,99,78,27,56};
+		int [] arr1= {99,34,78,84,49,12,67,89,56};
 		
 		selectionSort(arr);
+		selectionSort(arr1);
 		System.out.print(" Using Selection Sort : ");
 		for(int i:arr) {
 			System.out.print(i+ " ");
 		}
+		System.out.println();
+		System.out.print(" Using Selection Sort : ");
+		for(int i:arr1) {
+			System.out.print(i+" ");
+		};
 	}
 
 }
